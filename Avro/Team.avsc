@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "Team",
+  "namespace" : "Andreani.KafkaDemo.Events.Record.Common",
+  "fields" : [ {
+    "name" : "tl",
+    "type" : "string"
+  }, {
+    "name" : "boss",
+    "type" : "string"
+  }, {
+    "name" : "members",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    }
+  } ]
+}

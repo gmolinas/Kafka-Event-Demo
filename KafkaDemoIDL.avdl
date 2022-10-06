@@ -1,0 +1,27 @@
+  @namespace("Andreani.KafkaDemo.Events.Record") 
+  protocol KafkaDemoProtocol{
+  record KafkaDemo{
+     int id;
+     string title;
+     int attendance;
+     boolean didYouUnderstand;
+     Andreani.KafkaDemo.Events.Record.Common.Person  me;
+     timestamp_ms time;
+   }   
+    
+  @namespace("Andreani.KafkaDemo.Events.Record.Common")
+  record Person{
+     string name;
+     string surname;
+     string seniority;
+     boolean onSite;
+     Team team;
+   }  
+
+  @namespace("Andreani.KafkaDemo.Events.Record.Common")
+  record Team{
+     string tl;
+     string boss;
+     array<string> members;
+   }
+  }

@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "KafkaDemo",
+  "namespace" : "Andreani.KafkaDemo.Events.Record",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "int"
+  }, {
+    "name" : "title",
+    "type" : "string"
+  }, {
+    "name" : "attendance",
+    "type" : "int"
+  }, {
+    "name" : "didYouUnderstand",
+    "type" : "boolean"
+  }, {
+    "name" : "me",
+    "type" : {
+      "type" : "record",
+      "name" : "Person",
+      "namespace" : "Andreani.KafkaDemo.Events.Record.Common",
+      "fields" : [ {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "surname",
+        "type" : "string"
+      }, {
+        "name" : "seniority",
+        "type" : "string"
+      }, {
+        "name" : "onSite",
+        "type" : "boolean"
+      }, {
+        "name" : "team",
+        "type" : {
+          "type" : "record",
+          "name" : "Team",
+          "fields" : [ {
+            "name" : "tl",
+            "type" : "string"
+          }, {
+            "name" : "boss",
+            "type" : "string"
+          }, {
+            "name" : "members",
+            "type" : {
+              "type" : "array",
+              "items" : "string"
+            }
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "name" : "time",
+    "type" : {
+      "type" : "long",
+      "logicalType" : "timestamp-millis"
+    }
+  } ]
+}

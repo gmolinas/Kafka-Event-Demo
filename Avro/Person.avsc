@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "Person",
+  "namespace" : "Andreani.KafkaDemo.Events.Record.Common",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string"
+  }, {
+    "name" : "surname",
+    "type" : "string"
+  }, {
+    "name" : "seniority",
+    "type" : "string"
+  }, {
+    "name" : "onSite",
+    "type" : "boolean"
+  }, {
+    "name" : "team",
+    "type" : {
+      "type" : "record",
+      "name" : "Team",
+      "fields" : [ {
+        "name" : "tl",
+        "type" : "string"
+      }, {
+        "name" : "boss",
+        "type" : "string"
+      }, {
+        "name" : "members",
+        "type" : {
+          "type" : "array",
+          "items" : "string"
+        }
+      } ]
+    }
+  } ]
+}
